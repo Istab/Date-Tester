@@ -50,6 +50,10 @@ switch ($action) {
 	}
 
         // make sure the due date is after the invoice date
+	if($invoice_date >= $due_date) {
+	  $message = 'Due date has to be after the invoice date.';
+	  break;
+	}
 
         // format both dates
         $invoice_date_f = 'not implemented yet';
