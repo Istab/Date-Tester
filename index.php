@@ -56,8 +56,8 @@ switch ($action) {
 	}
 
         // format both dates
-        $invoice_date_f = 'not implemented yet';
-        $due_date_f = 'not implemented yet'; 
+        $invoice_date_f = $invoice_date->format('F j, Y');
+        $due_date_f = $due_date->format('F j, Y');
         
         // get the current date and time and format it
         $current_date_f = 'not implemented yet';
