@@ -66,9 +66,12 @@ switch ($action) {
         
         // get the amount of time between the current date and the due date
         // and format the due date message
-        $due_date_message = 'not implemented yet';
-
-        break;
+	$diff = $current_date->diff($due_date);
+	if($current_date > $due_date) {
+	  $due_date_message = $diff->format("This invoice is %y years, %m months, and %d days overdue.");
+	} else {
+	  $due_date_message = $diff->format("This invoice is due in %y years, %m months, and %d days");
+	}
 }
 include 'date_tester.php';
 ?>
