@@ -40,6 +40,14 @@ switch ($action) {
 
         // convert date strings to DateTime objects
         // and use a try/catch to make sure the dates are valid
+	try {
+	  $invoice_date = new DateTime($invoice_date_s);
+	  $due_date = new DateTime($due_date_s);
+	} catch (Exception $e) {
+	  $message = 'Both invoice date and due date need to have valid date
+	  format.';
+	  break;
+	}
 
         // make sure the due date is after the invoice date
 
