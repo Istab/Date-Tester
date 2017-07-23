@@ -33,6 +33,11 @@ switch ($action) {
 
         // make sure the user enters both dates
 
+	if(empty($invoice_date_s) || empty($due_date_s)) {
+	  $message = 'Both an invoice date and a due date are required!';
+	  break;
+	}
+
         // convert date strings to DateTime objects
         // and use a try/catch to make sure the dates are valid
 
